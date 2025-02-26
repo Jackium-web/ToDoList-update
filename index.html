@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do list Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loading()">
+    <main>
+        <secction class="heading">
+            <div class="navbar">
+                <button type="button" class="share-button">
+                    <img src="/share.png" alt=""><p>Share</p>
+                </button>
+            </div>
+            <div class="heading-title">
+                <h1>Chores</h1>
+            </div>
+        </secction>
+        <section class="form-input">
+            <div class="form">
+                <form class="create">
+                    <input type="text" class="create-taskInput">
+                    <button type="button" class="create-taskbtn" onclick="createTask()">
+                        <img src="/plus.png" alt="" width="50px" height="50px">
+                    </button>
+                </form>
+            </div>
+        </secction>
+        <section class="task-view">
+            <div class="incompleteTaskings">
+                <h1 class="incomplete-title">To Do</h1>
+                <div class="incomplete-tasks">
+                
+                    
+                </div>
+            </div>
+            <hr>
+            <div class="completeTaskings">
+                <h1 class="incomplete-title">Completed</h1>
+                <div class="complete-tasks">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="edit-task">
+            <form class="create update">
+                <input type="text" class="id23" hidden>
+                <input type="text" class="edit" cols="90%" rows="20%">
+                <button type="button" class="create-taskbtn" onclick="update()" >
+                    <img src="/pencil.png" alt="" srcset="" width="50px" height="50px">
+                </button>
+            </form>
+
+            <button class="exit">
+                <img src="/cross (1).png" alt="">
+            </button>
+        </section>
+
+        <section class="warning-pop">
+            <div>
+                <h4>Please add a task</h4>
+            </div>
+        </section>
+
+        <section class="share">
+            <div class="share-in">
+                <h2>Share</h2>
+                <div class="share-buttons">
+                    <button class="facebook" onclick="shareToFacebook()">Facebook</button>
+                    <button class="twitter" onclick="shareToTwitter()">Twitter</button>
+                    <button class="linkedin"onclick="shareToLinkedIn()">LinkedIn</button>
+                    <button class="whatsapp"onclick="shareToWhatsApp()">WhatsApp</button>
+                    <button class="telegram"onclick="shareToTelegram()">Telegram</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,305 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary:rgba(27, 5, 27, 0.897);
+    --heading-text-size:large;
+    --font-color:rgba(240, 248, 255, 0.637);
+    --font-family:"Poppins", sans-serif;
+    --secondary-color:rgb(27, 5, 27);
+    --task-bg:rgba(100, 78, 100, 0.719);
+    --complete-task-bg:rgba(100, 78, 100, 0.178);
+    --complete-task-text:rgba(240, 248, 255, 0.425);
+}
+
+body{
+    background: var(--primary);
+}
+
+main{
+    max-width: 1200px;
+    margin: auto;
+} 
+
+.heading-title{
+    text-align: center;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: var(--heading-text-size);
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    color:var(--font-color);
+    button{
+        width: 100px;
+        padding: 10px 30px;
+        background:rgb(25, 113, 148);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition:0.75s;
+        display: flex;
+        gap: 5px;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        color:aliceblue;
+        img{
+            width: 50%;
+            height: 50%;
+        }
+    }
+}
+
+.form-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    .form{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    form{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        background:var(--secondary-color);
+        border-radius: 50px;
+        padding: 2px 5px;
+        input{
+            padding:20px 40px;
+            border-radius: 10px;
+            outline: none;
+            width: 95%;
+            border: none;
+            background:var(--secondary-color);
+            border-radius:50px;
+            margin: 0 2px;
+            font-size: larger;
+            color:var(--font-color);
+        }
+        button{
+            background: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.task-view{
+    width: 100%;
+    margin: 20px 0;
+    .incomplete-title{
+        font-size: xx-large;
+        margin: 20px 0;
+        color: var(--font-color);
+    }
+    .incomplete-tasks .content{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        gap:10px;
+        background: var(--task-bg);
+        border-radius: 10px;
+        margin: 20px 0;
+        font-size: x-large;
+        color: aliceblue;
+    }
+    .complete-tasks h1{
+        font-size: xx-large;
+        margin: 20px 0;
+        color: var(--font-color);
+    }
+    .complete-tasks .content{
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        gap:10px;
+        background: var(--complete-task-bg);
+        border-radius: 10px;
+        margin: 20px 0;
+        font-size: x-large;
+        .task-details{
+            text-decoration: line-through;
+            color:var(--complete-task-text);
+        }
+    }
+    button{
+        padding: 10px 20px;
+        font-size: large;
+        cursor: pointer;
+        font-family: var(--font-family);
+        border-radius: 10px;
+        border:none;
+        outline: none;
+        color:inherit;
+    }
+    .taskbtns{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        
+        .button1{
+            background: green;
+        }
+        .button2{
+            background: grey;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .button3{
+            background: #ff0000;
+            color:aliceblue;
+        }
+        .retrive{
+            color:aliceblue;
+            background: green;
+        }
+    }
+}
+
+.edit-task{
+    position: fixed;
+    backdrop-filter: blur(10px);
+    top:0;
+    left:0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    .update{
+        margin: 20px;
+        width: 50%;
+    }
+}
+
+.display{
+    display: flex;
+}
+
+.warning-pop{
+    background: #f50303c9;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    color: aliceblue;
+    position: fixed;
+    width: 50%;
+    text-align: center;
+    top:-50%;
+}
+
+.edit{
+    background: transparent;
+    padding: 20px;
+    margin: 20px;
+    color:aliceblue;
+}
+
+.warning-animation{
+    animation-name: warning;
+    animation-duration: 0.2s;
+    animation-timing-function:linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes warning {
+    from{
+        top:-50%;
+    }
+    to{
+        top:2%;
+    }
+}
+
+.exit{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top:2%;
+    right: 2%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.share{
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    display: none;
+}
+
+.share-in{
+    background:rgb(245, 231, 245);
+    padding: 20px;
+    z-index: 1999;
+    text-align: center;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.share-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+}
+.share-buttons button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.facebook { background-color: #3b5998; }
+.twitter { background-color: #1DA1F2; }
+.linkedin { background-color: #0077b5; }
+.whatsapp { background-color: #25D366; }
+.telegram { background-color: #0088cc; }
+
+.display-none{
+    display: none;
+}
