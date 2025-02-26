@@ -117,7 +117,8 @@ function edit(id){
     document.querySelector(".id23").value = task_source.id; 
     document.querySelector('.edit').addEventListener('keyup',(e)=>{
         if(e.keyCode === 13){
-            document.querySelector(".edit").value += `<br>`;
+            document.querySelector('.edit-task').classList.remove('display');
+            update();
         }
     });
 }
