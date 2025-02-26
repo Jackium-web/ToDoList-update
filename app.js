@@ -111,8 +111,7 @@ function retrive(id){
 
 
 function edit(id){
-    document.querySelector('.edit-task').classList.add('display');
-    document.querySelector('.edit-task').classList.toggle('display-none');
+    document.querySelector('.edit-task').classList.toggle('display');
     var task_source = incompleteTasks.find(rec=>rec.id ===id)
     document.querySelector(".edit").value = task_source.task;
     document.querySelector(".id23").value = task_source.id; 
@@ -166,5 +165,5 @@ document.querySelector('.share').onclick =()=>{
 }
 
 document.querySelector('.exit').onclick =()=>{
-    document.querySelector('.edit-task').classList.toggle('display-none');
+    document.querySelector('.edit-task').classList.toggle('display');
 }
