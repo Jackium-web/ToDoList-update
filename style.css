@@ -303,3 +303,22 @@ main{
 .display-none{
     display: none;
 }
+
+.titn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .clear_all_incomplete{
+        background: rgb(241, 4, 4);
+        color: aliceblue;
+    }
+}
+
+
+.display-clear{
+ display: block;   
+}
+
+.clear_all_incomplete{
+    display: none;
+}
