@@ -322,3 +322,7 @@ main{
 .clear_all_incomplete{
     display: none;
 }
+.date{
+    color:aliceblue;
+    width: 100%;
+}
