@@ -115,6 +115,13 @@ document.querySelector('.create-taskInput').addEventListener("keypress", functio
     }
 });
 
+function clearAllIncomplete(){
+    localStorage.removeItem("complete");
+    completedTasks = [];
+    addtoStorage();
+}
+
+
 function retrive(id){
     var recod = completedTasks.find(rec=>rec.id===id);
     var retrivedTasks = {id:recod.id, task:recod.task, createdDate:timestamp};
