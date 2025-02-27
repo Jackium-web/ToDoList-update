@@ -2,7 +2,7 @@ var idNo = JSON.parse(localStorage.getItem('idNo')) || 0;
 var incomidNo = JSON.parse(localStorage.getItem('incomidNo')) || 0;
 var incompleteTasks = JSON.parse(localStorage.getItem('incomplete')) || [];
 var completedTasks = JSON.parse(localStorage.getItem('complete')) || [];
-
+var timestamp = new Date().toLocaleString();
 
 function loading(){
     var incompleteTaskView = document.querySelector('.incomplete-tasks');
@@ -18,6 +18,9 @@ function loading(){
         incompleteRec.map(function(record){
             incompleteTaskElements += `
                 <div class="content">
+                    <div class="date">
+                        ${record.createdDate}
+                    </div>
                     <div class="task-details">
                         ${record.task}
                     </div>
@@ -41,6 +44,9 @@ function loading(){
         completeTaskRec.map(function(record){
             completeTaskElements+= `
                 <div class="content">
+                     <div class="date">
+                        ${record.completedDate}
+                    </div>
                     <div class="task-details">
                         ${record.task}
                     </div>
@@ -76,7 +82,7 @@ function createTask(){
     else{
         var taskInput = document.querySelector('.create-taskInput').value;
         var form = document.querySelector('.create');
-        var newTask = {id:idNo+=1, task:taskInput};
+        var newTask = {id:idNo+=1, task:taskInput, createdDate:timestamp};
         form.reset();
         incompleteTasks.push(newTask);
         addtoStorage();
@@ -96,7 +102,7 @@ function deletecompletedTask(id){
 function complete(id){
   var completedtask = incompleteTasks.find(rec=>rec.id === id);
   var completedTasking = completedtask.task;
-  var newCompletedTask = {id:incomidNo+=1, task:completedTasking};
+  var newCompletedTask = {id:incomidNo+=1, task:completedTasking, completedDate:timestamp};
   completedTasks.push(newCompletedTask);
   incompleteTasks = incompleteTasks.filter(rec =>rec.id !==id);
   addtoStorage();
@@ -111,7 +117,7 @@ document.querySelector('.create-taskInput').addEventListener("keypress", functio
 
 function retrive(id){
     var recod = completedTasks.find(rec=>rec.id===id);
-    var retrivedTasks = {id:recod.id, task:recod.task};
+    var retrivedTasks = {id:recod.id, task:recod.task, createdDate:timestamp};
     incompleteTasks.push(retrivedTasks);
     completedTasks = completedTasks.filter(rec =>rec.id !== id);
     addtoStorage();
