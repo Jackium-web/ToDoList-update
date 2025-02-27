@@ -14,7 +14,6 @@ function loading(){
     console.log(incompleteRec.length);
     console.log(completeTaskRec.length);
     if(incompleteRec.length > 0){
-        document.querySelector('.clear_all_incomplete').style.display = 'block';
         incompleteRec.map(function(record){
             incompleteTaskElements += `
                 <div class="content">
@@ -36,12 +35,12 @@ function loading(){
         });
     }
     else{
-        document.querySelector('.clear_all_incomplete').style.display = 'none';
         incompleteTaskView.innerHTML = "";
     }
 
     if(completeTaskRec.length > 0){
         completeTaskRec.map(function(record){
+            document.querySelector('.clear_all_incomplete').style.display = 'block';
             completeTaskElements+= `
                 <div class="content">
                      <div class="date">
@@ -61,6 +60,7 @@ function loading(){
         });
     }
     else{
+        document.querySelector('.clear_all_incomplete').style.display = 'none';
         completeTaskVeiw.innerHTML = "";
     }
 }
