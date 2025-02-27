@@ -14,6 +14,7 @@ function loading(){
     console.log(incompleteRec.length);
     console.log(completeTaskRec.length);
     if(incompleteRec.length > 0){
+        document.querySelector('.clear_all_incomplete').style.display = 'block';
         incompleteRec.map(function(record){
             incompleteTaskElements += `
                 <div class="content">
@@ -32,6 +33,7 @@ function loading(){
         });
     }
     else{
+        document.querySelector('.clear_all_incomplete').style.display = 'none';
         incompleteTaskView.innerHTML = "";
     }
 
@@ -99,6 +101,13 @@ function complete(id){
   incompleteTasks = incompleteTasks.filter(rec =>rec.id !==id);
   addtoStorage();
 }
+
+document.querySelector('.create-taskInput').addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        createTask(); 
+    }
+});
 
 function retrive(id){
     var recod = completedTasks.find(rec=>rec.id===id);
