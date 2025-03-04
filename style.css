@@ -154,7 +154,7 @@ main{
     color:var(--complete-task-text);
 }
 
-.task-view .button1{.task-view .button2
+.task-view .button1{
     background: green;
 }
 
