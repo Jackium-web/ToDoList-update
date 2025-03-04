@@ -36,27 +36,29 @@ main{
     text-transform: uppercase;
     font-family: var(--font-family);
     color:var(--font-color);
-    button{
-        width: 100px;
-        padding: 10px 30px;
-        background:rgb(25, 113, 148);
-        border: none;
-        outline: none;
-        cursor: pointer;
-        transition:0.75s;
-        display: flex;
-        gap: 5px;
-        border-radius: 10px;
-        align-items: center;
-        justify-content: center;
-        font-size: larger;
-        color:aliceblue;
-        img{
-            width: 50%;
-            height: 50%;
-        }
-    }
 }
+.heading button{
+    width: 100px;
+    padding: 10px 30px;
+    background:rgb(25, 113, 148);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition:0.75s;
+    display: flex;
+    gap: 5px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    color:aliceblue;
+}
+.heading button img{
+    width: 50%;
+    height: 50%;
+}
+
+
 
 .form-input{
     display: flex;
@@ -64,13 +66,9 @@ main{
     justify-content: center;
     flex-direction: column;
     padding: 20px;
-    .form{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    form{
+}
+
+.form-input form{
         width: 100%;
         display: flex;
         align-items: center;
@@ -79,105 +77,121 @@ main{
         background:var(--secondary-color);
         border-radius: 50px;
         padding: 2px 5px;
-        input{
-            padding:20px 40px;
-            border-radius: 10px;
-            outline: none;
-            width: 95%;
-            border: none;
-            background:var(--secondary-color);
-            border-radius:50px;
-            margin: 0 2px;
-            font-size: larger;
-            color:var(--font-color);
-        }
-        button{
-            background: transparent;
-            outline: none;
-            border: none;
-            cursor: pointer;
-        }
     }
+
+.form-input form button{
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.form-input form input{
+    padding:20px 40px;
+    border-radius: 10px;
+    outline: none;
+    width: 95%;
+    border: none;
+    background:var(--secondary-color);
+    border-radius:50px;
+    margin: 0 2px;
+    font-size: larger;
+    color:var(--font-color);
+}
+
+.form-input .form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .task-view{
     width: 100%;
     margin: 20px 0;
-    .incomplete-title{
-        font-size: xx-large;
-        margin: 20px 0;
-        color: var(--font-color);
-    }
-    .incomplete-tasks .content{
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column;
-        gap:10px;
-        background: var(--task-bg);
-        border-radius: 10px;
-        margin: 20px 0;
-        font-size: x-large;
-        color: aliceblue;
-    }
-    .complete-tasks h1{
-        font-size: xx-large;
-        margin: 20px 0;
-        color: var(--font-color);
-    }
-    .complete-tasks .content{
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column;
-        gap:10px;
-        background: var(--complete-task-bg);
-        border-radius: 10px;
-        margin: 20px 0;
-        font-size: x-large;
-        .task-details{
-            text-decoration: line-through;
-            color:var(--complete-task-text);
-        }
-    }
-    button{
-        padding: 10px 20px;
-        font-size: large;
-        cursor: pointer;
-        font-family: var(--font-family);
-        border-radius: 10px;
-        border:none;
-        outline: none;
-        color:inherit;
-    }
-    .taskbtns{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        
-        .button1{
-            background: green;
-        }
-        .button2{
-            background: grey;
-            img{
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .button3{
-            background: #ff0000;
-            color:aliceblue;
-        }
-        .retrive{
-            color:aliceblue;
-            background: green;
-        }
-    }
+}
+
+.task-view .incomplete-title{
+    font-size: xx-large;
+    margin: 20px 0;
+    color: var(--font-color);
+}
+
+.task-view .incomplete-tasks .content{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap:10px;
+    background: var(--task-bg);
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: x-large;
+    color: aliceblue;
+}
+
+.task-view .complete-tasks h1{
+    font-size: xx-large;
+    margin: 20px 0;
+    color: var(--font-color);
+}
+
+.task-view .complete-tasks .content{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap:10px;
+    background: var(--complete-task-bg);
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: x-large;
+}
+
+.task-view .complete-tasks .content .task-details{
+    text-decoration: line-through;
+    color:var(--complete-task-text);
+}
+
+.task-view .button1{.task-view .button2
+    background: green;
+}
+
+.task-view .button2{
+    background: grey;
+}
+
+.task-view .button2 img{
+    width: 100%;
+    height: 100%;
+}
+
+.task-view  .button3{
+    background: #ff0000;
+    color:aliceblue;
+}
+.task-view button{
+    padding: 10px 20px;
+    font-size: large;
+    cursor: pointer;
+    font-family: var(--font-family);
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    color:inherit;
+}
+
+.task-view .taskbtns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.task-view .taskbtns .retrive{
+    color:aliceblue;
+    background: green;
 }
 
 .edit-task{
@@ -191,10 +205,11 @@ main{
     align-items: center;
     justify-content: center;
     display: none;
-    .update{
-        margin: 20px;
-        width: 50%;
-    }
+}
+
+.edit-task .update{
+    margin: 20px;
+    width: 50%;
 }
 
 .display{
@@ -246,12 +261,12 @@ main{
     outline: none;
     border: none;
     cursor: pointer;
-    img{
-        width: 100%;
-        height: 100%;
-    }
 }
 
+.exit img{
+    width: 100%;
+    height: 100%;
+}
 
 .share{
     position: fixed;
@@ -308,10 +323,11 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .clear_all_incomplete{
-        background: rgb(241, 4, 4);
-        color: aliceblue;
-    }
+}
+
+.titn .clear_all_incomplete{
+    background: rgb(241, 4, 4);
+    color: aliceblue;
 }
 
 
